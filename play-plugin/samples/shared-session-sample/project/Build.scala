@@ -15,7 +15,6 @@ object ApplicationBuild extends Build {
 
 
   val main = play.Project(appName, appVersion, appDependencies).settings(
-        resolvers += "Local Play Repository" at "file://home/ashihaby/programs/play-2.1.0/play-2.0/repository/local"    
   )
 
 }
