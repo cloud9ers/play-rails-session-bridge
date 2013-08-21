@@ -35,3 +35,15 @@ play-plugin/samples/shared-session-sample/.cache
 play-plugin/samples/shared-session-sample/.target
 play-plugin/samples/shared-session-sample/bin
 
+
+
+rails-plugin/memcached_json_store/.bundle/
+rails-plugin/memcached_json_store/log/*.log
+rails-plugin/memcached_json_store/pkg/
+rails-plugin/memcached_json_store/test/dummy/db/*.sqlite3
+rails-plugin/memcached_json_store/test/dummy/db/*.sqlite3-journal
+rails-plugin/memcached_json_store/test/dummy/log/*.log
+rails-plugin/memcached_json_store/test/dummy/tmp/
+rails-plugin/memcached_json_store/test/dummy/.sass-cache
+
+

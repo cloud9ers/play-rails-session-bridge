@@ -57,7 +57,6 @@ class SessionsCache(app: Application) {
       val memcachePassword = app.configuration.getString("memcached.password").getOrElse {
         throw new RuntimeException("Bad configuration for memcached: missing password")
       }
-      // Use plain SASL to connect to memcached
       val ad = new AuthDescriptor(Array("PLAIN"),
         new PlainCallbackHandler(memcacheUser, memcachePassword))
       val cf = new ConnectionFactoryBuilder()
