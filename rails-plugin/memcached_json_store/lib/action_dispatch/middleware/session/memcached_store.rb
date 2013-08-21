@@ -1,7 +1,6 @@
 require 'action_dispatch/middleware/session/dalli_store'
 require 'action_dispatch/middleware/session/flash'
 require 'json'
-require 'base64'
 
 class MemcachedStore  < ActionDispatch::Session::DalliStore
   def set_session(env, sid, session_data, options = nil)

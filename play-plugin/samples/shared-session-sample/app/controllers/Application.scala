@@ -3,11 +3,20 @@ package controllers
 import play.api._
 import play.api.mvc._
 import com.cloud9ers.play2.memcached.MemcachedPlugin._
+import play.api.libs.json.JsObject
+import play.api.libs.json.JsObject
+import play.api.libs.json.JsObject
 object Application extends Controller {
   
   def index = Action { request =>
-    println(request.globalSession)
-    Ok(views.html.index(request.cookies.get("_foundation_session").get.value))
+    request.globalSession match {
+      case Some(session: JsObject) =>
+        Ok(session)
+      case None =>
+        Ok("None")
+      case _ =>
+        Ok("invalid session")
+    }
   }
   
 }

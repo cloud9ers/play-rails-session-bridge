@@ -11,6 +11,8 @@ import net.spy.memcached.transcoders.Transcoder
 import java.util.concurrent.TimeUnit
 import play.api.mvc.Request
 import play.api.Play
+import play.api.libs.json.Json
+import org.codehaus.jackson.annotate.JsonValue
 
 class MemcachedPlugin(app: Application) extends Plugin {
 
@@ -81,15 +83,10 @@ class SessionsCache(app: Application) {
       }
       Option(
         any match {
-          case x: java.lang.Byte => x.byteValue()
-          case x: java.lang.Short => x.shortValue()
-          case x: java.lang.Integer => x.intValue()
-          case x: java.lang.Long => x.longValue()
-          case x: java.lang.Float => x.floatValue()
-          case x: java.lang.Double => x.doubleValue()
-          case x: java.lang.Character => x.charValue()
-          case x: java.lang.Boolean => x.booleanValue()
-          case x => x
+          case x: java.lang.String => Json.parse(x)
+          case x => 
+            logger.error("invalid session $x")
+            None
         })
     } catch {
       case e: Throwable =>
