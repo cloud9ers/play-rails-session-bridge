@@ -4,7 +4,7 @@ import play.Project._
 
 object ApplicationBuild extends Build {
 
-  val appName         = "shared-session"
+  val appName         = "play-rails-session-bridge"
   val appVersion      = "1.0-SNAPSHOT"
   val appScalaVersion = "2.10.0"
   val appScalaBinaryVersion = "2.10"
