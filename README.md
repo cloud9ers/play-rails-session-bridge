@@ -38,6 +38,6 @@ After that you can access the rails session by
 also you should add this import 
 
   
-   import com.cloud9ers.play2.memcached.MemcachedPlugin._
+    import com.cloud9ers.play2.memcached.MemcachedPlugin._
    
 
