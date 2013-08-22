@@ -33,7 +33,7 @@ Then you should add the memcached host to application.conf
 After that you can access the rails session by
 
 
-   request.globalSession        #session is a JsObject
+    request.globalSession        #session is a JsObject
    
 also you should add this import 
 
