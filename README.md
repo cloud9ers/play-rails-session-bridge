@@ -36,6 +36,7 @@ After that you can access the rails session by
    request.globalSession        #session is a JsObject
    
 also you should add this import 
+
   
    import com.cloud9ers.play2.memcached.MemcachedPlugin._
    
