@@ -40,4 +40,21 @@ also you should add this import
   
     import com.cloud9ers.play2.memcached.MemcachedPlugin._
    
+Rails Plugin Setup:
+===================
+Add this line to your gemfile
+
+    gem  'memcached_json_store', :git => 'git@github.com:cloud9ers/play-rails-session-bridge.git'
+    
+You should configure your app to use memcachedJsonStore by setting the session_sore like that:
+
+open “config/initializers/session_store.rb”
+
+Add these lines to it
+
+    require 'action_dispatch/middleware/session/memcached_store'
+    Rails.application.config.session_store :memcached_store, :memcache_server => ['localhost'],
+                                  :namespace => 'sessions', :key => '_foundation_session', :expire_after => 7.days, :domain => :all
+
+
 
